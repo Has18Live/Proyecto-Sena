@@ -1,0 +1,205 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400&display=swap');
+
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Añadido: incluir padding y border en el tamaño */
+    font-family: 'Outfit', sans-serif; /* Ajustado: Selecciona la fuente principal */
+}
+
+/* Fondo de la página */
+body {
+    background-color: #f5f5f5; /* Añadido: Color de fondo suave */
+    background-image: url('/modern-1.jpg'); /* Ajustado: Imagen de fondo */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* Estilos para el navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: auto;
+    padding: 1.4rem 1rem;
+    background-color: #000000b5;
+    backdrop-filter: blur(10px);
+    border-radius: 3rem;
+    margin-top: 1rem;
+}
+
+/* Estilos para el logo */
+.logo {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilos para los elementos de la lista del navbar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+li {
+    padding: 0rem 1.1rem;
+    float: left;
+}
+
+li a {
+    color: #e96d3f;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: .7px;
+    position: relative;
+}
+
+/* Estilos para el efecto hover de los elementos de la lista */
+li a::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transform: scale(0, 1);
+    transition: transform .3s ease;
+}
+
+li a:hover::before {
+    transform: scale(1, 1);
+}
+
+/* Ajuste de tamaño de fuente en pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 80%;
+    }
+
+    nav {
+        max-width: 100%;
+    }
+}
+
+/* Ajuste de tamaño de fuente en pantallas aún más pequeñas */
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 85%;
+    }
+
+    header {
+        height: 100vh;
+    }
+
+    li {
+        padding: 1rem 1.1rem;
+    }
+
+    .menu {
+        display: block;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    ul {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        top: 4rem;
+        left: -100%;
+        background-color: #000000b5;
+        backdrop-filter: blur(10px);
+    }
+
+    #click:checked~ul {
+        left: 0%;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #333; /* Añadido: Color de fondo para el footer */
+    padding: 20px; /* Añadido: Espaciado interior del footer */
+    color: #fff; /* Añadido: Color de texto del footer */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* Estilos para el slider */
+.slider-container {
+    position: relative;
+}
+
+.slider {
+    overflow: hidden;
+    width: 1256px;
+    height: 372px;
+    margin: auto;
+}
+
+.slides {
+    display: flex;
+    width: 6280px; /* Ajustado: 1256px * 5 */
+    transition: transform 0.5s ease;
+}
+
+.slides img {
+    width: 1256px;
+    height: 372px;
+}
+
+/* Estilos para el botón de consulta */
+.consultar-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 100;
+}
+/*DESCRIPCION DEL TEXTO*/
+.descripcion {
+    text-align: center;
+    max-width: 800px; /* Establece un ancho máximo para el contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+.descripcion h2,
+.descripcion h3 {
+    color: #333; /* Color de texto */
+}
+
+.descripcion p {
+    line-height: 1.6; /* Espaciado entre líneas */
+}
