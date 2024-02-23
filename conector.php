@@ -1,20 +1,17 @@
 <?php
-// Datos de conexión a la base de datos
-$servername = "localhost"; // Cambia esto si tu servidor de MySQL está en otro lugar
-$username = "root"; // Cambia por tu nombre de usuario de MySQL
-$password = "contraseña_mysql"; // Cambia por tu contraseña de MySQL
-$database = "speed_store"; // Nombre de la base de datos
+// Configuración de la conexión a la base de datos
+$servername = "localhost"; // Cambia esto si tu servidor MySQL está en otro lugar
+$username = "root"; // Cambia esto al nombre de usuario de tu base de datos
+$password = "114412345"; // Cambia esto a la contraseña de tu base de datos
+$database = "speed_store_desarrollo"; // Cambia esto al nombre de tu base de datos
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $database);
 
-// Verificar conexión
+// Verificar la conexión
 if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-} else {
-    echo "Conexión exitosa";
+    die("Error de conexión: " . $conn->connect_error);
 }
 
-// Cerrar conexión
-$conn->close();
+echo "Conexión exitosa";
 ?>
