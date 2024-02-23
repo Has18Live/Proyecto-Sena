@@ -17,13 +17,13 @@ EXPOSE 3306
 RUN sed -i 's/^\(bind-address\s.*\)/# \1/' /etc/mysql/mysql.conf.d/mysqld.cnf
 
 # Ejecutamos MySQL Server al iniciar el contenedor
-CMD ["mysqld"]
+RUN ["mysqld"]
 
 # Establecemos la contraseña de root de MySQL por defecto (puedes cambiarla según tus preferencias)
 ENV MYSQL_ROOT_PASSWORD=12345
 
 # iniciamos el servicio ssh
-CMD service ssh start
+RUN service ssh start
 
 # iniciamos el servidor apache
-CMD service apache2 start
+RUN service apache2 start
