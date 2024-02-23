@@ -25,4 +25,5 @@ ENV MYSQL_ROOT_PASSWORD=12345
 # iniciamos el servicio ssh
 CMD service ssh start
 
-# 
+# iniciamos el servidor apache
+CMD service apache2 start
