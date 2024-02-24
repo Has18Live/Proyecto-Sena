@@ -35,8 +35,7 @@ EXPOSE 80
 RUN rm -rf /var/www/html/index.html
 
 #descargamos el repositorio
-RUN apt-get install git
-    git clone https://github.com/Has18Live/Proyecto-Sena.git
+RUN git clone https://github.com/Has18Live/Proyecto-Sena.git
 
 # Ejecutamos los servicios de MySQL y Apache al iniciar el contenedor
 # CMD ["sh", "-c", "/etc/init.d/mysql start && /etc/init.d/apache2 start && tail -f /dev/null"]
