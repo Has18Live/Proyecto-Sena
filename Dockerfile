@@ -3,7 +3,7 @@ FROM ubuntu:latest
 
 # Actualizamos el sistema e instalamos MySQL Server
 RUN apt-get update && \
-    apt-get install -y mysql-server-8.0 && \
+    apt-get install -y mysql-server && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -16,14 +16,23 @@ EXPOSE 3306
 # Configuramos la base de datos para aceptar conexiones desde cualquier dirección IP
 RUN sed -i 's/^\(bind-address\s.*\)/# \1/' /etc/mysql/mysql.conf.d/mysqld.cnf
 
-# Ejecutamos MySQL Server al iniciar el contenedor
-RUN ["mysqld"]
-
 # Establecemos la contraseña de root de MySQL por defecto (puedes cambiarla según tus preferencias)
 ENV MYSQL_ROOT_PASSWORD=12345
 
-# iniciamos el servicio ssh
-RUN service ssh start
+# Establecemos el tiempo de espera para las conexiones de ssh
+RUN echo "ClientAliveInterval 60" >> /etc/ssh/sshd_config
 
-# iniciamos el servidor apache
-RUN service apache2 start
+# Instalamos y habilitamos el servicio de Apache
+RUN apt-get install -y apache2 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    a2enmod rewrite
+
+# Exponemos el puerto 80 para el servicio de Apache
+EXPOSE 80
+
+# Eliminamos el archivo de bienvenida de Apache
+RUN rm -rf /var/www/html/index.html
+
+# Ejecutamos los servicios de MySQL y Apache al iniciar el contenedor
+CMD ["sh", "-c", "/etc/init.d/mysql start && /etc/init.d/apache2 start && tail -f /dev/null"]
