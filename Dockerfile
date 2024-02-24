@@ -19,8 +19,6 @@ RUN sed -i 's/^\(bind-address\s.*\)/# \1/' /etc/mysql/mysql.conf.d/mysqld.cnf
 # Establecemos la contraseña de root de MySQL por defecto (puedes cambiarla según tus preferencias)
 ENV MYSQL_ROOT_PASSWORD=12345
 
-# Establecemos el tiempo de espera para las conexiones de ssh
-RUN echo "ClientAliveInterval 60" >> /etc/ssh/sshd_config
 
 # Instalamos y habilitamos el servicio de Apache
 RUN apt-get install -y apache2 && \
