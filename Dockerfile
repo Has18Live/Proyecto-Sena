@@ -35,4 +35,7 @@ EXPOSE 80
 RUN rm -rf /var/www/html/index.html
 
 # Ejecutamos los servicios de MySQL y Apache al iniciar el contenedor
-CMD ["sh", "-c", "/etc/init.d/mysql start && /etc/init.d/apache2 start && tail -f /dev/null"]
+# CMD ["sh", "-c", "/etc/init.d/mysql start && /etc/init.d/apache2 start && tail -f /dev/null"]
+
+# Establecemos un comando predeterminado que se ejecutará cuando se inicie un contenedor basado en esta imagen
+CMD ["bash"]
