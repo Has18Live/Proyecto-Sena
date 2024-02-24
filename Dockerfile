@@ -21,10 +21,12 @@ ENV MYSQL_ROOT_PASSWORD=12345
 
 
 # Instalamos y habilitamos el servicio de Apache
-RUN apt-get install -y apache2 && \
+RUN apt-get update && \
+    apt-get install -y apache2 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     a2enmod rewrite
+
 
 # Exponemos el puerto 80 para el servicio de Apache
 EXPOSE 80
