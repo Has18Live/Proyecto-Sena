@@ -1,7 +1,7 @@
 <?php
 // Datos de conexión a la base de datos
 $servername = "localhost";
-$username = "root";
+$username = "phpmyadmin";
 $password = "12345";
 $database = "phpmyadmin";
 
