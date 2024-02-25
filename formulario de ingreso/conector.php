@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email_registro'];
     $contrasena = $_POST['password_registro'];
 
-    // Sentencia SQL para insertar los datos en la base de datos
+    // Sentencia SQL para insertar los datos en la tabla de usuarios
     $sql = "INSERT INTO usuarios (nombre_completo, correo_electronico, contrasena) VALUES ('$nombre', '$email', '$contrasena')";
 
     // Ejecutar la sentencia SQL
@@ -33,4 +33,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Cerrar conexión
 $conn->close();
 ?>
-
