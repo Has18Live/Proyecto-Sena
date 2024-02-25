@@ -1,8 +1,8 @@
 <?php
 // Datos de conexión a la base de datos
 $servername = "localhost";
-$username = "phpmyadmin";
-$password = "12345678";
+$username = "root";
+$password = "12345";
 $database = "phpmyadmin";
 
 // Crear conexión
@@ -14,19 +14,23 @@ if ($conn->connect_error) {
 }
 
 // Obtener datos del formulario
-$nombre = $_POST['nombre_completo'];
-$email = $_POST['correo_electronico'];
-$contrasena = $_POST['contrasena'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre_registro'];
+    $email = $_POST['email_registro'];
+    $contrasena = $_POST['password_registro'];
 
-// Insertar datos en la base de datos
-$sql = "INSERT INTO usuarios (nombre_completo, correo_electronico, contrasena) VALUES ('$nombre', '$email', '$contrasena')";
+    // Sentencia SQL para insertar los datos en la base de datos
+    $sql = "INSERT INTO usuarios (nombre_completo, correo_electronico, contrasena) VALUES ('$nombre', '$email', '$contrasena')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "Registro exitoso";
-} else {
-    echo "Error al registrar usuario: " . $conn->error;
+    // Ejecutar la sentencia SQL
+    if ($conn->query($sql) === TRUE) {
+        echo "Registro exitoso";
+    } else {
+        echo "Error al registrar usuario: " . $conn->error;
+    }
 }
 
 // Cerrar conexión
 $conn->close();
 ?>
+
