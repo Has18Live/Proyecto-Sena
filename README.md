@@ -7,3 +7,10 @@ Interfaz Intuitiva: Navega por la aplicación con facilidad y encuentra lo que b
 Seguridad Garantizada: Protegemos tus datos y transacciones para una experiencia de compra segura en todo momento.
 Soporte al Cliente: Nuestro equipo de soporte está disponible para ayudarte en cualquier momento.
 ¡Explora Speed Store hoy mismo y descubre una nueva forma de comprar y vender en línea!
+
+Instrucciones para configurar el entorno:
+Descarga e instala XAMPP desde este enlace.
+Descarga e instala Visual Studio Code y las extensiones necesarias.
+Ejecuta XAMPP.
+Ve al directorio de carpetas y crea una carpeta con el repositorio Proyecto-Sena.
+Asegúrate de tener los servicios "Apache" y "MySQL" activados en XAMPP.
