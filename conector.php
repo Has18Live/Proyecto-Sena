@@ -2,8 +2,8 @@
 // Datos de conexión a la base de datos
 $servername = "localhost"; // Cambia esto si tu servidor de MySQL está en otro lugar
 $username = "root"; // Cambia por tu nombre de usuario de MySQL
-$password = "123456"; // Cambia por tu contraseña de MySQL
-$database = "speed_store_desarrollo"; // Nombre de la base de datos
+$password = ""; // Cambia por tu contraseña de MySQL
+$database = "datos"; // Nombre de la base de datos
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $database);
