@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portal Jurado</title>
+
+	<link rel="stylesheet" href="../css/datatables.css">
+	<link rel="stylesheet" href="../css/materialize.css">
+	<link rel="stylesheet" href="../css/estilos.css">
+
+</head>
+<body class="purple lighten-3">
+
+	<nav class="purple">
+		<div class="nav-wrapper">
+			<div class="container">
+				<ul class="left">
+					<li>
+						Reloj <span id="hora"></span> - <span id="fecha"></span>
+					</li>
+				</ul>
+				<a href="#" class="brand-logo center">Lista de Votantes</a>
+				<ul class="right">
+					<li><a href="../index.php">Cerrar Sesion</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br>
+	<div class="container">
+		<div class="card-panel z-depth-5" style="overflow: scroll;">
+
+			<table id="tablaVotantes">
+				<thead>
+					<tr>
+						<th>Votó</th>
+						<th>Cedula</th>
+						<th>Primer Apellido</th>
+						<th>Segundo Apellido</th>
+						<th>Nombres</th>
+						<th>Editar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="votante1">
+						<td><input type="checkbox" id="1" checked="checked" disabled="disabled" /><label for="1"></label>
+					    </td>
+					    <td>12345678</td>
+						<td>Martinez</td>
+						<td>Lopez</td>
+						<td>Juan</td>
+						<td><button class="btn waves-effect waves-light purple editar">Editar</button></td>
+					</tr>
+					<tr id="votante2">
+						<td><input type="checkbox" id="2" checked="checked" disabled="disabled" /><label for="2"></label>
+					    </td>
+					    <td>10002000</td>
+						<td>Meza</td>
+						<td>Ramirez</td>
+						<td>Lorena</td>
+						<td><button class="btn waves-effect waves-purple purple editar">Editar</button></td>
+					</tr>
+					<tr id="votante3">
+						<td><input type="checkbox" id="3" checked="checked" disabled="disabled" /><label for="3"></label>
+					    </td>
+						<td>11002200</td>
+					    <td>Arevalo</td>
+						<td>Madrid</td>
+						<td>Andres</td>
+						<td><button class="btn waves-effect waves-light purple editar">Editar</button></td>
+					</tr>
+					<tr id="votante4">
+						<td><input type="checkbox" id="4"/><label for="4"></label>
+					    </td>
+						<td>10123456</td>
+					    <td></td>
+						<td></td>
+						<td></td>
+						<td><button class="btn waves-effect waves-light purple editar">Editar</button></td>
+					</tr>
+					<tr id="votante5">
+						<td><input type="checkbox" id="5"/><label for="5"></label>
+					    </td>
+						<td>11002233</td>
+					    <td></td>
+						<td></td>
+						<td></td>
+						<td><button class="btn waves-effect waves-light purple editar">Editar</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/materialize.js"></script>
+	<script type="text/javascript" src="../js/datatables.js"></script>
+
+
+	<script type="text/javascript" src="../js/logicaVistaJurado.js"></script>
+
+</body>
+</html>
