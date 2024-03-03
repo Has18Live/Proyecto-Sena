@@ -6,24 +6,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Añadido: incluir padding y border en el tamaño */
-    font-family: 'Outfit', sans-serif; /* Ajustado: Selecciona la fuente principal */
 }
 
 /* Fondo de la página */
 body {
-    background-color: #f5f5f5; /* Añadido: Color de fondo suave */
-    background-image: url('./estilos.css'); /* Ajustado: Imagen de fondo */
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('../imagenes/fondo_index.png'); /* Ruta de tu imagen de fondo */
+    background-size: cover; /* Ajusta la imagen de fondo para cubrir toda la página */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    font-family: 'Outfit', sans-serif; /* Ajustado: Selecciona la fuente principal */
 }
 
-/* Estilos para el navbar */
-nav {
+/* Estilos para el nuevo navbar */
+.second-nav {
     display: flex;
     justify-content: space-between;
-    max-width: 80%;
+    max-width: 90%; /* Ajusta según sea necesario */
     margin: auto;
     padding: 1.4rem 1rem;
     background-color: #000000b5;
@@ -32,19 +33,17 @@ nav {
     margin-top: 1rem;
 }
 
-/* Estilos para el logo */
-.logo {
+.second-nav .logo {
     font-size: 1.3rem;
     font-weight: 600;
 }
 
-.logo a {
-    color: #fff;
+.second-nav .logo a {
+    color: #f57906;
     text-decoration: none;
 }
 
-/* Estilos para los elementos de la lista del navbar */
-ul {
+.second-nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -53,12 +52,12 @@ ul {
     margin-bottom: 0;
 }
 
-li {
+.second-nav li {
     padding: 0rem 1.1rem;
     float: left;
 }
 
-li a {
+.second-nav li a {
     color: #e96d3f;
     text-decoration: none;
     font-size: 1rem;
@@ -67,31 +66,19 @@ li a {
     position: relative;
 }
 
-/* Estilos para el efecto hover de los elementos de la lista */
-li a::before {
+.second-nav li a::before {
     content: "";
     position: absolute;
     bottom: -6px;
     width: 100%;
     height: 3px;
-    background-color: #fff;
+    background-color: #f19100;
     transform: scale(0, 1);
     transition: transform .3s ease;
 }
 
-li a:hover::before {
+.second-nav li a:hover::before {
     transform: scale(1, 1);
-}
-
-/* Ajuste de tamaño de fuente en pantallas pequeñas */
-@media only screen and (max-width: 768px) {
-    html {
-        font-size: 80%;
-    }
-
-    nav {
-        max-width: 100%;
-    }
 }
 
 /* Ajuste de tamaño de fuente en pantallas aún más pequeñas */
@@ -136,21 +123,23 @@ li a:hover::before {
 
 /* Estilos para el footer */
 footer {
-    background-color: #333; /* Añadido: Color de fondo para el footer */
-    padding: 20px; /* Añadido: Espaciado interior del footer */
-    color: #fff; /* Añadido: Color de texto del footer */
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: static; /* Cambiado a fixed */
+    bottom: 0;
+    width: 100%;
+    z-index: 999; /* Asegura que el footer esté en la parte superior del apilamiento */
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.social-icons {
+    margin-left: 10px;
 }
 
 .social-icons a {
     color: #fff;
-    text-decoration: none;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* Estilos para el slider */
@@ -163,6 +152,8 @@ footer {
     width: 1256px;
     height: 372px;
     margin: auto;
+    border: 2px solid #cccccc7a; /* Agregado: Borde alrededor del slider */
+
 }
 
 .slides {
@@ -188,6 +179,7 @@ footer {
     border-radius: 5px;
     z-index: 100;
 }
+
 /*DESCRIPCION DEL TEXTO*/
 .descripcion {
     text-align: center;
@@ -195,11 +187,19 @@ footer {
     margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
 
-.descripcion h2,
-.descripcion h3 {
-    color: #333; /* Color de texto */
+.descripcion h2 {
+    color: orangered;
 }
 
-.descripcion p {
-    line-height: 1.6; /* Espaciado entre líneas */
+.descripcion h3 {
+    color: #f15900; /* Color de texto */
 }
+
+.descripcion p,
+.descripcion ol {
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #000000;
+    font-style: normal;
+    font-weight: 700; /* Ajusta el valor según lo grueso que desees el texto */
+}
+

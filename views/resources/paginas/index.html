@@ -6,57 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Speed Store</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh; /* Establece la altura mínima del cuerpo para que el footer funcione */
-            position: relative; /* Establece el cuerpo como un contexto de posición relativa */
-        }
-            footer {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-        position: fixed; /* Cambiado a fixed */
-        bottom: 0;
-        width: 100%;
-        z-index: 999; /* Asegura que el footer esté en la parte superior del apilamiento */
-    }
-
-        .social-icons {
-            margin-left: 10px;
-        }
-        .social-icons a {
-            color: #fff;
-            margin-right: 10px;
-        }
-
-        body {
-    background-image: url('../imagenes/fondo_index.png'); /* Ruta de tu imagen de fondo */
-    background-size: cover; /* Ajusta la imagen de fondo para cubrir toda la página */
-    background-position: center; /* Centra la imagen de fondo */
-    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-}
-
+       
     </style>
 </head>
 <body>
-    <?php include 'conector.php'; ?>
     <header>
-        <nav>
+        <nav class="second-nav">
             <div class="logo">
                 <a href="#">Speed Store</a>
             </div>
             <ul>
-                <li><a href="registro.html">Entrar Registrar</a></li>
+                <li><a href="registro.html">Registrar</a></li>
                 <li><a href="ventajas.html">Ventajas</a></li>
                 <li><a href="#">Promoción</a></li>
-                <li><a href="#">Contactos</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
+        
     </header>
+    
 
     <div class="slider">
         <div class="slides">
@@ -108,5 +79,6 @@
             setTimeout(carousel, 3000); // Cambia la imagen cada 3 segundos
         }
     </script>
+
 </body>
 </html>
