@@ -7,13 +7,47 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Speed Store</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Establece la altura mínima del cuerpo para que el footer funcione */
+            position: relative; /* Establece el cuerpo como un contexto de posición relativa */
+        }
+            footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: fixed; /* Cambiado a fixed */
+        bottom: 0;
+        width: 100%;
+        z-index: 999; /* Asegura que el footer esté en la parte superior del apilamiento */
+    }
+
+        .social-icons {
+            margin-left: 10px;
+        }
+        .social-icons a {
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        body {
+    background-image: url('../imagenes/fondo_index.png'); /* Ruta de tu imagen de fondo */
+    background-size: cover; /* Ajusta la imagen de fondo para cubrir toda la página */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+}
+
+    </style>
 </head>
 <body>
     <?php include 'conector.php'; ?>
     <header>
         <nav>
             <div class="logo">
-                <a href="#">Speed Store Tienda</a>
+                <a href="#">Speed Store</a>
             </div>
             <ul>
                 <li><a href="registro.html">Entrar Registrar</a></li>
@@ -26,21 +60,25 @@
 
     <div class="slider">
         <div class="slides">
-            <img src="../imagenes/imagen1.png" alt="Imagen 1">
-            <img src="../imagenes/imagen2.png" alt="Imagen 2">
-            <img src="../imagenes/imagen3.jpg" alt="Imagen 3">
-            <img src="../imagenes/imagen4.png" alt="Imagen 4">
-            <img src="slider/f.elconfidencial.com_original_d46_576_511_d46576511ae81a3ecfe472f8fdb46ec5.jpg" alt="Imagen 5">
+            <div class="slide"><img src="../imagenes/imagen1.png" alt="Imagen 1"></div>
+            <div class="slide"><img src="../imagenes/imagen2.png" alt="Imagen 2"></div>
+            <div class="slide"><img src="../imagenes/imagen3.jpg" alt="Imagen 3"></div>
+            <div class="slide"><img src="../imagenes/imagen4.png" alt="Imagen 4"></div>
         </div>
     </div>
 
     <div class="descripcion">
-        <h2>¿Cómo funciona Speed Store?</h2>
-        <p>Speed Store es una plataforma innovadora que te permite comprar y vender productos de manera rápida y sencilla. Nuestra aplicación utiliza tecnología avanzada para ofrecerte una experiencia de compra fluida y segura.</p>
-        <h3>Descripción del funcionamiento de la aplicación:</h3>
-        <p>[Aquí va el texto proporcionado que explica cómo funciona la aplicación]</p>
-    </div>
-        
+            <h2>¿Qué encontrarás en Sped Store?</h2>
+            <p>**Sped Store** es una plataforma innovadora que te permite comprar y vender productos de manera rápida y sencilla. Nuestra aplicación utiliza tecnología avanzada para ofrecerte una experiencia de compra fluida y segura.</p>
+            <h3>Descripción del funcionamiento de la aplicación:</h3>
+            <p>En **Sped Store**, encontrarás una amplia variedad de productos y servicios. Nuestra plataforma conecta a usuarios como tú con vendedores que ofrecen sus productos y servicios en un solo lugar. Aquí está cómo funciona:</p>
+            <ol>
+                <li>**Explora y Compra**: Navega por nuestras categorías y descubre productos emocionantes. Compara precios, lee reseñas y encuentra exactamente lo que necesitas.</li>
+                <li>**Vende tus Productos**: Si eres un vendedor, regístrate en Sped Store y comienza a ofrecer tus productos. Establece la ubicación y el precio, y espera a que los compradores interesados se pongan en contacto contigo.</li>
+                <li>**Conexión Directa**: Sped Store facilita la comunicación entre compradores y vendedores. Puedes chatear con los vendedores, hacer preguntas y cerrar acuerdos sin complicaciones.</li>
+            </ol>
+        </div>
+           
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 Speed Store. Todos los derechos reservados.</p>
@@ -51,7 +89,24 @@
                 <a href="#"><i class="bi bi-linkedin"></i></a>
             </div>
         </div>
-    </footer>
-    <script src="script.js"></script>
+
+             
+    <script>
+        // Configura el carrusel para que las imágenes se muevan automáticamente
+        var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(carousel, 3000); // Cambia la imagen cada 3 segundos
+        }
+    </script>
 </body>
 </html>
