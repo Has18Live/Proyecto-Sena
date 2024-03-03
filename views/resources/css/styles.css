@@ -12,7 +12,7 @@
 /* Fondo de la página */
 body {
     background-color: #f5f5f5; /* Añadido: Color de fondo suave */
-    background-image: url('/modern-1.jpg'); /* Ajustado: Imagen de fondo */
+    background-image: url('./estilos.css'); /* Ajustado: Imagen de fondo */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
