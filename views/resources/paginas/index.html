@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Speed Store</title>
+
+
+</head>
+<body>
+    <header>
+        <nav class="second-nav">
+            <div class="logo">
+                <a href="#">Speed Store</a>
+            </div>
+            <ul>
+                <li><a href="registro.html">Inicio Registrar</a></li>
+                <li><a href="ventajas.html">Ventajas</a></li>
+                <li><a href="#">Promoción</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="../imagenes/imagen1.png" alt="Imagen 1"></div>
+            <div class="slide"><img src="../imagenes/imagen2.png" alt="Imagen 2"></div>
+            <div class="slide"><img src="../imagenes/imagen3.jpg" alt="Imagen 3"></div>
+            <div class="slide"><img src="../imagenes/imagen4.png" alt="Imagen 4"></div>
+            <div class="slide"><img src="../imagenes/03-03-13-43-01-5027448.jpg" alt="Imagen 5"></div>
+            <div class="slide"><img src="../imagenes/180227111729-supermarket-trolley-file-full-169-800x445.jpg" alt="Imagen 6"></div>
+            <div class="slide"><img src="../imagenes/supermercado-ok.webp" alt="Imagen 7"></div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="main-content">
+            <h2>¿Qué encontrarás en Sped Store?</h2>
+            <p>**Sped Store** es una plataforma innovadora que te permite comprar y vender productos de manera rápida y sencilla. Nuestra aplicación utiliza tecnología avanzada para ofrecerte una experiencia de compra fluida y segura.</p>
+            <h3>Descripción del funcionamiento de la aplicación:</h3>
+            <p>En **Sped Store**, encontrarás una amplia variedad de productos y servicios. Nuestra plataforma conecta a usuarios como tú con vendedores que ofrecen sus productos y servicios en un solo lugar. Aquí está cómo funciona:</p>
+            <ol>
+                <li>**Explora y Compra**: Navega por nuestras categorías y descubre productos emocionantes. Compara precios, lee reseñas y encuentra exactamente lo que necesitas.</li>
+                <li>**Vende tus Productos**: Si eres un vendedor, regístrate en Sped Store y comienza a ofrecer tus productos. Establece la ubicación y el precio, y espera a que los compradores interesados se pongan en contacto contigo.</li>
+                <li>**Conexión Directa**: Sped Store facilita la comunicación entre compradores y vendedores. Puedes chatear con los vendedores, hacer preguntas y cerrar acuerdos sin complicaciones.</li>
+            </ol>
+        </div>
+        </div>     
+           
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Speed Store. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+
+             
+    <script>
+        // Configura el carrusel para que las imágenes se muevan automáticamente
+        var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(carousel, 3000); // Cambia la imagen cada 3 segundos
+        }
+    </script>
+
+</body>
+</html>

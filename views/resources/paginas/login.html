@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Estilos adicionales */
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .container-form {
+            margin-top: 50px;
+        }
+        .info-childs {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .btn-submit {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container-form login hide">
+            <div class="information">
+                <div class="info-childs">
+                    <h2>Bienvenido Nuevamente</h2>
+                    <p> “¡Hola de nuevo! Ingresa con tu cuenta para continuar explorando. Si olvidaste tu contraseña, puedes restablecerla aquí.”</p>
+                    <a href="./registro.html" class="btn btn-primary">Registrarse</a>
+
+                </div>
+            </div>
+            <div class="form-information">
+                <div class="form-information-childs">
+                    <h2>Iniciar Sesión</h2>
+                    <div class="icons">
+                        <i class='bx bxl-google'></i>
+                        <i class='bx bxl-facebook'></i>
+                        <i class='bx bxl-github'></i>
+                    </div>
+                    <p>o Inicia Sesión Con Tu Cuenta</p>
+                    <form class="form" action="../backend/log.php" method="POST">
+                        <div class="form-group">
+                            <label for="login_email"><i class='bx bx-envelope'></i></label>
+                            <input type="email" id="login_email" name="login_email" placeholder="Correo Electrónico" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="login_password"><i class='bx bx-lock-alt'></i></label>
+                            <input type="password" id="login_password" name="login_password" placeholder="Contraseña" required class="form-control">
+                        </div>
+                        <input type="submit" value="Iniciar Sesión" class="btn-submit btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
