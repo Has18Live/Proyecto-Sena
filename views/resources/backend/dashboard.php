@@ -1,13 +1,4 @@
-<?php
-session_start();
 
-// Verificar si el usuario está autenticado
-if (!isset($_SESSION['username'])) {
-    // Si el usuario no está autenticado, redirigirlo al inicio de sesión
-    header("Location: login.php");
-    exit();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -18,8 +9,9 @@ if (!isset($_SESSION['username'])) {
     <!-- Agrega aquí tus enlaces a archivos CSS y otras dependencias -->
 </head>
 <body>
-    <h1>Panel de Control</h1>
+    <h1>Mi Perfil Speed Store</h1>
     <p>Bienvenido, <?php echo $_SESSION['username']; ?>.</p>
-    <!-- Agrega aquí el contenido específico del panel de control -->
+    <!-- Falta configurar la variable del nombre de usuario y que se muestre en el dashboard -->
+    
 </body>
 </html>
