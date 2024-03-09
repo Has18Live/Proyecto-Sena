@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
 
         // Redirige a la página deseada
-        window.location.href = "ruta_de_tu_pagina_de_inicio.html";
+        window.location.href = "";
     });
 });
