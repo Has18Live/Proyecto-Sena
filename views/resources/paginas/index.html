@@ -1,88 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Speed Store</title>
-
-
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>speed store</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
     <header>
-        <nav class="second-nav">
-            <div class="logo">
-                <a href="#">Speed Store</a>
-            </div>
-            <ul>
-                <li><a href="registro.html">Inicio Registrar</a></li>
-                <li><a href="ventajas.html">Ventajas</a></li>
-                <li><a href="#">Promoción</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
+      <div class="content">
+        <nav>
+          <p class="brand">speed<strong>store</strong></p>
+          <ul>
+            <li><a href="#catalog">Catalogo de Promociones</a></li>
+            <li><a href="#about">Contactos</a></li>
+            <li><a href="#feature">Registro</a></li>
+            <button>Login</button>
+          </ul>
         </nav>
-        
+        <div class="header-block">
+          <div class="text">
+            <h2>Productos perfectos para ti</h2>
+            <p>
+              Encuentra los mejores productos y precios en tu zona....
+            </p>
+          </div>
+          <img src="../imagenes/index.png" alt="Car" />
+        </div>
+      </div>
     </header>
-    
-
-    <div class="slider">
-        <div class="slides">
-            <div class="slide"><img src="../imagenes/imagen1.png" alt="Imagen 1"></div>
-            <div class="slide"><img src="../imagenes/imagen2.png" alt="Imagen 2"></div>
-            <div class="slide"><img src="../imagenes/imagen3.jpg" alt="Imagen 3"></div>
-            <div class="slide"><img src="../imagenes/imagen4.png" alt="Imagen 4"></div>
-            <div class="slide"><img src="../imagenes/03-03-13-43-01-5027448.jpg" alt="Imagen 5"></div>
-            <div class="slide"><img src="../imagenes/180227111729-supermarket-trolley-file-full-169-800x445.jpg" alt="Imagen 6"></div>
-            <div class="slide"><img src="../imagenes/supermercado-ok.webp" alt="Imagen 7"></div>
-
+    <section class="catalog" id="catalog">
+      <div class="content">
+        <div class="title-wrapper-catalog">
+          <p>Buscar Productos</p>
+          <h3>Catalogo General</h3>
         </div>
-    </div>
-    <div class="container">
-        <div class="main-content">
-            <h2>¿Qué encontrarás en Sped Store?</h2>
-            <p>**Sped Store** es una plataforma innovadora que te permite comprar y vender productos de manera rápida y sencilla. Nuestra aplicación utiliza tecnología avanzada para ofrecerte una experiencia de compra fluida y segura.</p>
-            <h3>Descripción del funcionamiento de la aplicación:</h3>
-            <p>En **Sped Store**, encontrarás una amplia variedad de productos y servicios. Nuestra plataforma conecta a usuarios como tú con vendedores que ofrecen sus productos y servicios en un solo lugar. Aquí está cómo funciona:</p>
-            <ol>
-                <li>**Explora y Compra**: Navega por nuestras categorías y descubre productos emocionantes. Compara precios, lee reseñas y encuentra exactamente lo que necesitas.</li>
-                <li>**Vende tus Productos**: Si eres un vendedor, regístrate en Sped Store y comienza a ofrecer tus productos. Establece la ubicación y el precio, y espera a que los compradores interesados se pongan en contacto contigo.</li>
-                <li>**Conexión Directa**: Sped Store facilita la comunicación entre compradores y vendedores. Puedes chatear con los vendedores, hacer preguntas y cerrar acuerdos sin complicaciones.</li>
-            </ol>
+        <div class="filter-card">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Escoje tus productos favoritos"
+          />
+          <button class="search-button">Buscar</button>
         </div>
-        </div>     
-           
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Speed Store. Todos los derechos reservados.</p>
-            <div class="social-icons">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
+
+        <div class="card-wrapper">
+          <div class="card-item">
+            <img src="../imagenes/ofertas/imagen1.png" alt="Car" />
+            <div class="card-content">
+              <h3>Tienda la venganza</h3>
+              <p>
+                Tienda la venganza de precios los espera con precios bajos.
+              </p>
+              <button type="button">Detalles Ubicacion?</button>
             </div>
+          </div>
+
+          <div class="card-item">
+            <img src="../imagenes/ofertas/imagen2.png" alt="Car" />
+            <div class="card-content">
+              <h3>Panaderia Marinillos</h3>
+              <p>
+                El mejor pan de el sur de Cali, pedidos y domicilios...
+              </p>
+              <button type="button">Detalles Ubicacion?</button>
+            </div>
+          </div>
+
+          <div class="card-item">
+            <img src="../imagenes/ofertas/imagen3.jpg" alt="Car" />
+            <div class="card-content">
+              <h3>Salsamentaria Bonanza</h3>
+              <p>
+                Salsamentaria Bonanza, entre y consulta nuestros productos...
+              </p>
+              <button type="button">Detalles Ubicacion?</button>
+            </div>
+          </div>
+
+          <div class="card-item">
+            <img src="../imagenes/ofertas/imagen4.png" alt="Car" />
+            <div class="card-content">
+              <h3>Tienda La Huerta</h3>
+              <p>
+                La huerta le ofrece productos frescos y cultivados sin contaminantes o productos nosivos para la salud...
+              </p>
+              <button type="button">Detalles Ubicacion?</button>
+            </div>
+          </div>
+
+          <div class="card-item">
+            <img src="../imagenes/ofertas/captura1.png" alt="Car" />
+            <div class="card-content">
+              <h3>Supermercados Silvia</h3>
+              <p>
+                Abrimos sucursales en diferentes municipios del valle del cauca...
+              </p>
+              <button type="button">Detalles Ubicacion?</button>
+            </div>
+          </div>
+
+          <div class="card-item">
+            <img src="../imagenes/ofertas/img_8727.jpg" alt="Car" />
+            <div class="card-content">
+              <h3>Santa Helena</h3>
+              <p>
+                Galeria santa helena, ubicados en la ciudad de cali tenemos los mejores precios del mercado caleño...
+              </p>
+              <button type="button">Detalles Ubicacion?</button>
+            </div>
+          </div>
+
+          <div class="card-item">
+            <img src="../imagenes/ofertas/mercado1.jpg" alt="Car" />
+            <div class="card-content">
+              <h3>La Ermita</h3>
+              <p>
+                Galeria la ermita ofrece los mejores precios para el norte de la ciudad de cali...
+              </p>
+              <button type="button">Detalles Ubicacion?</button>
+            </div>
+          </div>
+
+          <div class="card-item">
+            <img src="../imagenes/ofertas/mercado2.jpg" alt="Car" />
+            <div class="card-content">
+              <h3>Tienda Market Place</h3>
+              <p>
+                Tienda viertual ofreciendo los mejores productos, solo domicilios...
+              </p>
+              <button type="button">Detalles Ubicacion?</button>
+            </div>
+          </div>
+
+          <div class="card-item">
+            <img src="../imagenes/ofertas/captura2.png" alt="Car" />
+            <div class="card-content">
+              <h3>Galerias Caucanas</h3>
+              <p>
+                Te ofrecemos los mejores productos cultivados en el departamento del cauca...
+              </p>
+              <button type="button">Detalles Ubicacion?</button>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-             
-    <script>
-        // Configura el carrusel para que las imágenes se muevan automáticamente
-        var slideIndex = 0;
-        carousel();
+    <section class="about" id="about">
+      <div class="content">
+        <div class="title-wrapper-about">
+          <p>Contactos</p>
+          <h2>Información</h2>
+        </div>
+        <div class="about-content">
+          <div class="left">
+            <img src="../imagenes/repositorio.jpg" alt="About" />
+          </div>
+          <div class="right">
+            
+            <h2>¿Qué es Speed Store?</h2>
+            <p>
+              Speed Store es una aplicación innovadora diseñada para agilizar el proceso de ventas en tu negocio. Su funcionamiento se basa en la tecnología de contenedores mediante Docker, lo que permite una instalación rápida y sencilla de las herramientas necesarias en un entorno controlado con sistema Linux.
+            </p>
+            <p>
+              Con Speed Store, puedes gestionar tus ventas de manera eficiente y práctica, ya sea en una pequeña tienda local o en una empresa en crecimiento.
+            </p>
+            <p>
+              Una de las características distintivas de Speed Store es su capacidad para operar a través de la red local, aprovechando una base de datos previamente instalada en el entorno. Esto significa que los usuarios pueden acceder a la aplicación y gestionar sus ventas desde múltiples dispositivos conectados a la misma red, lo que facilita la colaboración y mejora la eficiencia en el flujo de trabajo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="features" id="features">
+      <div class="content">
+        <div class="title-wrapper-features">
+          <p>Consultar Temporada</p>
+          <h3>Ofertas dependiendo de los productos</h3>
+        </div>
+        <div class="feature-card-block">
+          <div class="feature-card-item">
+            <img src="images/feature-planet.png" alt="Feature" />
+            <div class="feature-text-content">
+              <h3>Title</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="feature-card-item">
+            <img src="images/feature-planet.png" alt="Feature" />
+            <div class="feature-text-content">
+              <h3>Title</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="feature-card-item">
+            <img src="images/feature-planet.png" alt="Feature" />
+            <div class="feature-text-content">
+              <h3>Title</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="feature-card-item">
+            <img src="images/feature-planet.png" alt="Feature" />
+            <div class="feature-text-content">
+              <h3>Title</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="feature-card-item">
+            <img src="images/feature-planet.png" alt="Feature" />
+            <div class="feature-text-content">
+              <h3>Title</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          <div class="feature-card-item">
+            <img src="images/feature-planet.png" alt="Feature" />
+            <div class="feature-text-content">
+              <h3>Title</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        function carousel() {
-            var i;
-            var slides = document.getElementsByClassName("slide");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(carousel, 3000); // Cambia la imagen cada 3 segundos
-        }
-    </script>
-
-</body>
+    <footer>
+      <div class="main">
+        <div class="content footer-links">
+          <div class="footer-company">
+            <h4>Company</h4>
+            <h6>About</h6>
+            <h6>Contact</h6>
+          </div>
+          <div class="footer-rental">
+            <h4>Rental</h4>
+            <h6>Self-Drive</h6>
+            <h6>Chauffer-Driven</h6>
+            <h6>Help</h6>
+          </div>
+          <div class="footer-social">
+            <h4>Stay connected</h4>
+            <div class="social-icons">
+              <img src="images/instagram.png" alt="Instagram" />
+              <img src="images/facebook.png" alt="Facebook" />
+            </div>
+          </div>
+          <div class="footer-contact">
+            <h4>Contact US</h4>
+            <h6>+55 31 988776655</h6>
+            <h6>contato@devsuperior.com.br</h6>
+            <h6>Nome da Rua, belo horizonte MG</h6>
+          </div>
+        </div>
+      </div>
+      <div class="last">DevSuperior 2021 - Use like you want</div>
+    </footer>
+  </body>
 </html>
