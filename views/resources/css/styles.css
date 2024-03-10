@@ -20,6 +20,10 @@ html,
 body {
   width: 100%;
   overflow-x: hidden;
+  background-image: url('../imagenes/fondo_frutas.png'); /* Ruta a tu imagen de fondo */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 header {
@@ -298,6 +302,7 @@ section .card-item {
   text-align: center;
   width: 90%;
   margin-bottom: 20px;
+  color: black;
 }
 
 .right p {
@@ -305,7 +310,7 @@ section .card-item {
   font-size: 1em;
   letter-spacing: 2px;
   text-align: center;
-  color: rgba(0, 0, 0, 0.4);
+  color: black;
 }
 
 
