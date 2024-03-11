@@ -83,8 +83,7 @@
                         $servername = "localhost";
                         $username = "root";
                         $password = "";
-                        $dbname = "usuarios";
-
+                        $dbname = "speed_store";
                         $conn = new mysqli($servername, $username, $password, $dbname);
 
                         // Verificar la conexión
