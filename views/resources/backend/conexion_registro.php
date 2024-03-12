@@ -24,14 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         // El usuario ya existe, mostrar mensaje de error
-        echo "<div class='error-message'>El usuario ya está registrado.</div>";
+        echo "<div style='text-align: center;'><div class='error-message' style='background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px; display: inline-block;'>El usuario ya está registrado.</div></div>";
     } else {
         // El usuario no existe, insertar datos en la base de datos
         $sql = "INSERT INTO usuarios (fullname, email, password) VALUES ('$fullname', '$email', '$password')";
 
         if ($conn->query($sql) === TRUE) {
             // Mostrar mensaje de éxito
-            echo "<div class='success-message'>Usuario registrado correctamente.</div>";
+            echo "<div style='text-align: center;'><div class='success-message' style='background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px; display: inline-block;'>Usuario registrado correctamente.</div></div>";
             
             // Crear una cadena con los datos del usuario
             $userData = "Nombre Completo: $fullname\nCorreo Electrónico: $email\nContraseña: $password\n";
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             fclose($file);
         } else {
             // Mostrar mensaje de error si hay un error en la inserción
-            echo "<div class='error-message'>Error al registrar el usuario: " . $conn->error . "</div>";
+            echo "<div style='text-align: center;'><div class='error-message' style='background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px; display: inline-block;'>Error al registrar el usuario: " . $conn->error . "</div></div>";
         }
     }
 
@@ -57,9 +57,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 } else {
     // Mostrar mensaje de error si no se recibieron datos del formulario
-    echo "<div class='error-message'>Error: No se recibieron datos del formulario.</div>";
+    echo "<div style='text-align: center;'><div class='error-message' style='background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px; display: inline-block;'>Error: No se recibieron datos del formulario.</div></div>";
 }
 ?>
 
 <!-- Agregar un botón para enlazar a una página web -->
-<a href="tu_pagina_web.php" class="btn btn-primary">Ir a mi página web</a>
+<a href="http://localhost/Proyecto-Sena/views/resources/dashboard/perfil_config.html" class="btn btn-primary" style="background-color: #007bff; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; border: none; font-size: 16px; cursor: pointer; transition: background-color 0.3s; display: block; margin: 0 auto; width: 200px;">Ir a mi página web</a>
+
+<style>
+    a {
+        bottom: auto;
+        color:#007bff;
+    }
+</style>
