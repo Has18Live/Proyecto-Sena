@@ -79,6 +79,19 @@
       </div>
       <div class="last">Todos los derechos reservados. 2024</div>
     </footer>
+    <?php
+// Leer el archivo de texto que contiene los datos del usuario registrado
+$fileName = "registros_usuario.txt";
+$fileContent = file_get_contents($fileName);
+
+// Dividir el contenido del archivo en líneas
+$lines = explode("\n", $fileContent);
+
+// Mostrar los datos del usuario en la página
+foreach ($lines as $line) {
+    echo "<p>$line</p>";
+}
+?>
 
 </body>
 </html>
