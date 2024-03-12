@@ -49,7 +49,7 @@
                 <div class="info-childs">
                     <h2>Bienvenido</h2>
                         <p></p>
-                    <a href=" ./views/resources/dashboard/perfil_config.html" class="btn btn-primary">Mi Perfil</a>
+                    <a href=" http://localhost/Proyecto-Sena/views/resources/dashboard/perfil_config.html" class="btn btn-primary">Mi Perfil</a>
                 </div>
             </div>
             <div class="form-information">
