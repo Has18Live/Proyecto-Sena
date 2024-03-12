@@ -48,34 +48,20 @@
             <div class="information">
                 <div class="info-childs">
                     <h2>Bienvenido</h2>
-                    <p>¡Bienvenido a nuestra comunidad! Regístrate para acceder a todas las funciones y contenido exclusivo. Completa los campos a continuación y comienza a disfrutar de nuestra plataforma.</p>
-                    <a href="./login.html" class="btn btn-primary">Entrar</a>
+                        <p></p>
+                    <a href="./login.html" class="btn btn-primary">Mi Perfil</a>
                 </div>
             </div>
             <div class="form-information">
                 <div class="form-information-childs">
-                    <h2>Crea una Cuenta</h2>
+                    <h2>Cuenta Creada</h2>
                     <div class="icons">
                         <i class='bx bxl-google'></i>
                         <i class='bx bxl-facebook'></i>
                         <i class='bx bxl-github'></i>
                     </div>
-                    <p>Regístrate Con Tu Nombre y Correo</p>
-                    <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-                        <div class="form-group">
-                            <label for="fullname"><i class='bx bx-user'></i></label>
-                            <input type="text" id="fullname" name="fullname" placeholder="Nombre Completo" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email"><i class='bx bx-envelope'></i></label>
-                            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password"><i class='bx bx-lock-alt'></i></label>
-                            <input type="password" id="password" name="password" placeholder="Contraseña" required>
-                        </div>
-                        <input type="submit" value="Registrarse" class="btn-submit btn btn-primary">
-                    </form>
+                    <p>Regístrado</p>
+                    
                     <?php
                     // Verificar si se recibieron datos del formulario
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
