@@ -30,23 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO usuarios (fullname, email, password) VALUES ('$fullname', '$email', '$password')";
 
         if ($conn->query($sql) === TRUE) {
-            // Mostrar mensaje de éxito
-            echo "<div style='text-align: center;'><div class='success-message' style='background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px; display: inline-block;'>Usuario registrado correctamente.</div></div>";
-            
-            // Crear una cadena con los datos del usuario
-            $userData = "Nombre Completo: $fullname\nCorreo Electrónico: $email\nContraseña: $password\n";
-
-            // Especificar la ruta y el nombre del archivo de texto
-            $fileName = "registros_usuario.txt";
-
-            // Abrir el archivo en modo escritura, si no existe se crea
-            $file = fopen($fileName, "a") or die("Archivo Temporal Generado.");
-
-            // Escribir los datos del usuario en el archivo
-            fwrite($file, $userData);
-
-            // Cerrar el archivo
-            fclose($file);
+            // Redireccionar a la página web después de un registro exitoso
+            header("Location: http://localhost/Proyecto-Sena/views/resources/dashboard/perfil_config.html");
+            exit; // Detener la ejecución del script PHP después de la redirección
         } else {
             // Mostrar mensaje de error si hay un error en la inserción
             echo "<div style='text-align: center;'><div class='error-message' style='background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px; display: inline-block;'>Error al registrar el usuario: " . $conn->error . "</div></div>";
