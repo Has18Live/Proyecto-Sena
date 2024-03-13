@@ -113,6 +113,32 @@ nav ul button:hover {
   color: white;
 }
 
+.add-product-form {
+  max-width: 800px; /* Ajusta el ancho según sea necesario */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+  padding: 20px; /* Agrega relleno para espacio interno */
+  background-color: #fff; /* Añade un fondo blanco al formulario */
+  border-radius: 8px; /* Añade esquinas redondeadas al formulario */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega sombra alrededor del formulario */
+  margin-bottom: 20px; /* Añade margen inferior para espacio entre el formulario y el footer */
+}
+
+.header-block2 {
+  max-width: 1000px;
+  min-width: 300px;
+  height: auto;
+  background: var(--blue);
+  border-radius: 8px;
+  box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+  padding: 20px;
+  margin-bottom: 20px; /* Añade margen inferior para espacio entre header-block y el siguiente elemento */
+}
+
+
 .content .header-block {
   max-width: 1000px;
   min-width: 300px;

@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "usuarios";
+    $dbname = "speed_store";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login_password = $_POST["login_password"];
 
     // Verificar las credenciales en la base de datos
-    $sql = "SELECT * FROM registrados WHERE email='$login_email' AND password='$login_password'";
+    $sql = "SELECT * FROM usuarios WHERE email='$login_email' AND password='$login_password'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
