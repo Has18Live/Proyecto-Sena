@@ -35,7 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["fullname"], $_POST["em
         $stmt->bind_param("sss", $fullname, $email, $hashed_password);
 
         if ($stmt->execute()) {
-            // Redireccionar a la página web después de un registro exitoso
+            // Iniciar sesión y almacenar los datos del usuario en la sesión
+            session_start();
+            $_SESSION['fullname'] = $fullname;
+            $_SESSION['email'] = $email;
+
+            // Redireccionar a la página de perfil después de un registro exitoso
             header("Location: http://localhost/Proyecto-Sena/views/resources/dashboard/perfil_config.html");
             exit; // Detener la ejecución del script PHP después de la redirección
         } else {
@@ -59,17 +64,4 @@ function clean_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
-// Después de insertar los datos del usuario en la base de datos de manera segura
-if ($stmt->execute()) {
-    // Iniciar sesión y almacenar los datos del usuario en la sesión
-    session_start();
-    $_SESSION['fullname'] = $fullname;
-    $_SESSION['email'] = $email;
-
-    // Redireccionar a la página de perfil después de un registro exitoso
-    header("Location: http://localhost/Proyecto-Sena/views/resources/dashboard/perfil.php");
-    exit; // Detener la ejecución del script PHP después de la redirección
-}
-
-
 ?>
