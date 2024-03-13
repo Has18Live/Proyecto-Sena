@@ -1,58 +1,75 @@
 <?php
-// Verificar si se recibieron datos del formulario
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Conectar a la base de datos
+// Verificar si se recibieron datos del formulario de manera segura
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["fullname"], $_POST["email"], $_POST["password"])) {
+    // Evitar la inyección de SQL utilizando consultas preparadas
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "speed_store";
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Verificar la conexión
     if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    // Obtener los datos del formulario
-    $fullname = $_POST["fullname"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    // Obtener y limpiar los datos del formulario
+    $fullname = clean_input($_POST["fullname"]);
+    $email = clean_input($_POST["email"]);
+    $password = clean_input($_POST["password"]);
 
     // Verificar si el usuario ya existe en la base de datos
-    $sql = "SELECT * FROM usuarios WHERE email='$email'";
-    $result = $conn->query($sql);
+    $sql = "SELECT * FROM usuarios WHERE email=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         // El usuario ya existe, mostrar mensaje de error
         echo "<div style='text-align: center;'><div class='error-message' style='background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px; display: inline-block;'>El usuario ya está registrado.</div></div>";
     } else {
-        // El usuario no existe, insertar datos en la base de datos
-        $sql = "INSERT INTO usuarios (fullname, email, password) VALUES ('$fullname', '$email', '$password')";
+        // El usuario no existe, insertar datos en la base de datos de manera segura
+        $sql = "INSERT INTO usuarios (fullname, email, password) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->bind_param("sss", $fullname, $email, $hashed_password);
 
-        if ($conn->query($sql) === TRUE) {
+        if ($stmt->execute()) {
             // Redireccionar a la página web después de un registro exitoso
             header("Location: http://localhost/Proyecto-Sena/views/resources/dashboard/perfil_config.html");
             exit; // Detener la ejecución del script PHP después de la redirección
         } else {
             // Mostrar mensaje de error si hay un error en la inserción
-            echo "<div style='text-align: center;'><div class='error-message' style='background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px; display: inline-block;'>Error al registrar el usuario: " . $conn->error . "</div></div>";
+            echo "<div style='text-align: center;'><div class='error-message' style='background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px; display: inline-block;'>Error al registrar el usuario.</div></div>";
         }
     }
 
     // Cerrar la conexión
+    $stmt->close();
     $conn->close();
 } else {
     // Mostrar mensaje de error si no se recibieron datos del formulario
     echo "<div style='text-align: center;'><div class='error-message' style='background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px; display: inline-block;'>Error: No se recibieron datos del formulario.</div></div>";
 }
+
+// Función para limpiar los datos del formulario
+function clean_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+// Después de insertar los datos del usuario en la base de datos de manera segura
+if ($stmt->execute()) {
+    // Iniciar sesión y almacenar los datos del usuario en la sesión
+    session_start();
+    $_SESSION['fullname'] = $fullname;
+    $_SESSION['email'] = $email;
+
+    // Redireccionar a la página de perfil después de un registro exitoso
+    header("Location: http://localhost/Proyecto-Sena/views/resources/dashboard/perfil.php");
+    exit; // Detener la ejecución del script PHP después de la redirección
+}
+
+
 ?>
-
-<!-- Agregar un botón para enlazar a una página web -->
-<a href="http://localhost/Proyecto-Sena/views/resources/dashboard/perfil_config.html" class="btn btn-primary" style="background-color: #007bff; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; border: none; font-size: 16px; cursor: pointer; transition: background-color 0.3s; display: block; margin: 0 auto; width: 200px;">Ir a mi página web</a>
-
-<style>
-    a {
-        bottom: auto;
-        color:#007bff;
-    }
-</style>
